@@ -1,0 +1,212 @@
+/*
+ * Copyright (c) 2020 Lafydev. ()
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program.
+ * If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+using Gtk;
+using GLib;
+public string get_cle(string cle) {
+	string schema = "org.gnome.desktop.background"; 
+	
+	//verifie schema existe
+	string couleur="";
+	var settings_schema = SettingsSchemaSource.get_default ().lookup (schema, true);
+    if (settings_schema != null) {
+    if (settings_schema.has_key (cle)) {
+        var settings = new GLib.Settings (schema);
+        couleur = settings.get_string(cle);
+		} 
+	} else critical("pas de schema");
+	return (couleur);
+}
+public void set_cle(string cle, string couleur) {
+	string schema = "org.gnome.desktop.background"; 
+	
+	//verifie schema existe
+	var settings_schema = SettingsSchemaSource.get_default ().lookup (schema, true);
+    if (settings_schema != null) {
+    if (settings_schema.has_key (cle)) {
+        var settings = new GLib.Settings (schema);
+        settings.set_string(cle,couleur);
+		} 
+	} else critical("pas de schema");
+}
+
+
+public class Animage : Window {
+  private string[] listeimg;
+  private Image img;
+  private int count =0;
+  
+    void Avance () {
+	if (this.count< listeimg.length-1) {
+			   this.count++;}
+		   else {this.count=0;}
+		   }
+	
+	void Recule () {
+		int c;
+		c=this.count;
+		if (c!=0) {c--;}
+		 else {c=listeimg.length-1;}
+		//print("nouveau c=%d",c);
+		this.count=c;
+		}
+		   	   
+	void ChangeImage (int count) {
+	//affiche l'image en cours
+    string fich = this.listeimg[count];
+    if (this.listeimg[count]!=null) {
+		
+	try {			
+		  Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file (fich);
+		  //x,y=width,height
+		  int x,y;
+		  this.get_size(out x,out y);
+		  Gdk.Pixbuf scaled = pixbuf.scale_simple (x-100, y-50, Gdk.InterpType.BILINEAR);
+		  img.set_from_pixbuf (scaled);
+		  this.count=count; //a pu être modifié
+		   
+			  
+		} catch (Error e) {
+			stdout.printf("Error %s\n",e.message);
+		} 
+	}
+   }
+   
+	void ChargeRep (string rep ) {
+		//charge le tableau d'images à animer
+		try {
+				Dir dir = Dir.open (rep, 0);
+				string? name = null;
+				while ((name = dir.read_name ()) != null) {
+					File fich = File.new_for_path (rep+"/"+name);
+					//prendre slt les images
+					if (fich.query_exists ()) {
+						var file_info = fich.query_info ("*", FileQueryInfoFlags.NONE);
+						//stdout.printf ("Content type: %s\n", file_info.get_content_type ());
+			
+						if ("image" in file_info.get_content_type ()) { 
+							if (this.listeimg[0]==null) 
+							{this.listeimg[0] = (rep+"/"+name) ;}
+							else {
+						this.listeimg+=(rep+"/"+name);
+					}
+					}
+				}
+				
+				}
+			} catch (Error e)
+			{print("Erreur %s",e.message );}
+				
+			}
+		
+  public Animage () {
+	    this.listeimg={};
+		this.title = "Animages";
+		this.set_position (Gtk.WindowPosition.CENTER);
+		this.set_default_size (350,200);
+		//this.set_decorated(false);//pas de bordure
+		this.set_resizable(true); //pas de redim
+		this.destroy.connect (Gtk.main_quit);
+		this.border_width = 10; //marge intérieure  
+		
+		var box = new Gtk.Box(Gtk.Orientation.VERTICAL,5);
+		var toolbar = new Gtk.Toolbar();
+	    box.add(toolbar);
+	    var ico_nouv = new Gtk.Image.from_icon_name("document-new",IconSize.SMALL_TOOLBAR);
+ 		var btn_ouvrir = new Gtk.ToolButton(ico_nouv, "Ouvrir");
+ 		toolbar.add(btn_ouvrir);
+	  
+		var boxH = new Gtk.Box(Gtk.Orientation.HORIZONTAL,5);
+		var btnmoins= new Gtk.Button.with_label("-");
+		//fonds écran
+		var paththeme= Environment.get_user_data_dir() +"/backgrounds";
+		this.img = new Gtk.Image();
+		var btnplus= new Gtk.Button.with_label("+");
+		
+		boxH.add(btnmoins);
+	    boxH.add(img);
+	    boxH.add(btnplus);
+	    box.add(boxH);
+	    // charge les fonds écran
+		ChargeRep(Environment.get_user_data_dir() +"/backgrounds");
+	    ChangeImage(0);
+
+		//var btnopen = new Gtk.Button.with_label("changer de répertoire ...");
+		// add reporté après signal
+	   
+		//signaux 
+		btnmoins.clicked.connect( ()=> {
+			Recule();
+		   ChangeImage(count);
+			});
+		btnplus.clicked.connect( ()=> {
+			Avance();
+		   ChangeImage(this.count);
+			});
+			
+		btn_ouvrir.clicked.connect( ()=> {
+		var dialogue=new Gtk.FileChooserDialog("Ouvrir...",this,
+		 Gtk.FileChooserAction.SELECT_FOLDER,
+		"_Annuler",Gtk.ResponseType.CANCEL,
+		"_Ouvrir",Gtk.ResponseType.ACCEPT);
+		dialogue.set_filename (paththeme);
+
+		if (dialogue.run()==Gtk.ResponseType.ACCEPT) 
+			{
+			//string chem = dialogue.get_uri ();
+			listeimg= new string[1];
+			var rep = dialogue.get_uri().substring(7); //extrait ///file
+			
+			ChargeRep(rep);
+			ChangeImage(0);
+		}	
+		dialogue.destroy();	
+	});	
+	    
+		 //box.pack_start(btnopen,true,true);
+	  
+	  	 this.size_allocate.connect ((allocation) => {
+			//btnopen.adjust_size_request();
+            //ChangeImage(count);
+			
+        });
+	  
+		 this.add(box);
+         
+        }
+    
+   
+
+        public static int main (string[] args) {
+			Gtk.init (ref args);
+            var window = new Animage ();
+            window.show_all ();
+            
+            Timeout.add_seconds(5,()=>{
+				//print("5 sec count=%d\n", window.count);
+				window.Avance();
+				window.ChangeImage(window.count);
+				return true;
+			
+			});
+		Gtk.main();
+            return 0;
+           
+        }
+  }
+
