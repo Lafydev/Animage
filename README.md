@@ -1,9 +1,9 @@
 # Animage
 <h1>Description:</h1>
 Let your photos inspire your daily work. <br/>
-You can create a slideshow with your desktop theme or your personnal photos<br/>
+You can create a slideshow with your desktop theme or your personal photos<br/>
 <ul>
-<li>You can modify your timer</li>
+<li>Modify your timer</li>
 <li>upload a new directory</li>
 <li>Pin the widget to the desktop or keep it above all other windows</li> 
 </ul>
