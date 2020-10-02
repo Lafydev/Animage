@@ -16,6 +16,8 @@ Download the last release (zip) et extract files<br/>
 
 <h2>Dependencies</h2>
 These dependencies are needed for building : <br/>
+<pre color="red">sudo apt-get install exiv2 </pre/> ( added for meta informations)
+
 <pre>sudo apt-get install gcc valac gtk+-3.0 meson </pre/>
 
 <h2>Build with meson/Construction:</h2>
