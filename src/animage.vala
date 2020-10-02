@@ -19,7 +19,6 @@
 using Gtk;
 using GLib;
 
-
 public class Animage : Window {
   private string[] listeimg;
   private Image img;
@@ -42,7 +41,13 @@ public class Animage : Window {
 		 else {c=listeimg.length-1;}
 		this.count=c;
 		}
-		   	   
+	
+	string NommeImage() {
+		int c;
+		c = this.count;
+		return this.listeimg[c];
+	}	   	  
+				
 	void ChangeImage (int count) {
 	//affiche l'image en cours
     string fich = this.listeimg[count];
@@ -84,6 +89,8 @@ public class Animage : Window {
 	}
    }
    
+
+
 	void ChargeRep (string rep ) {
 		//charge le tableau d'images à animer
 		try {
@@ -125,11 +132,24 @@ public class Animage : Window {
 		this.destroy.connect (Gtk.main_quit);
 		this.border_width = 5; //marge intérieure  
 		
-		
 		var box = new Gtk.Box(Gtk.Orientation.VERTICAL,5);
 		var toolbar = new Gtk.ActionBar();
 		toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 	    box.pack_end(toolbar,false,true);
+	    
+	    //*******************************************
+ 		// i = sous menu info 
+ 		//*******************************************
+        // bouton donnant les infos META
+		//*******************************************				
+ 		
+        
+ 		var ico_info = new Gtk.Image.from_icon_name("info",IconSize.SMALL_TOOLBAR);
+ 		var btn_info = new Gtk.ToolButton(ico_info,"Info");
+ 	
+ 		btn_info.has_tooltip = true;
+		btn_info.tooltip_text = "Info image ";
+ 		toolbar.pack_end(btn_info);
  		
  		//*******************************************
  		// pinned = always below + no border
@@ -143,6 +163,7 @@ public class Animage : Window {
 		
  		toolbar.pack_end(btn_pin);
  		
+ 		/* bouton ouverture de répertoire */
  		var ico_ouvrir = new Gtk.Image.from_icon_name("document-open",IconSize.SMALL_TOOLBAR);
  		var btn_ouvrir = new Gtk.ToolButton(ico_ouvrir, "Ouvrir");
 		btn_ouvrir.tooltip_text = "Changer de répertoire";
@@ -168,7 +189,7 @@ public class Animage : Window {
 		btn_delai.has_tooltip = true;
 		btn_delai.tooltip_text = "Délai";
 		btn_delai.image=ico_delai;
-		btn_delai.set_popover(popover_delai);
+		/*btn_delai.set_popover(popover_delai);*/
  		toolbar.pack_end(btn_delai);
  		
  		//***********************************************
@@ -209,7 +230,6 @@ public class Animage : Window {
 		this.img = new Gtk.Image();
 		layout.put(this.img,0,0);
 		
-		
 		var btn_plus= new Gtk.Button.with_label("+");
 		btn_plus.tooltip_text = "Image suivante";
 		toolbar.pack_start(btn_plus);
@@ -225,6 +245,7 @@ public class Animage : Window {
 			Recule();
 		   ChangeImage(count);
 			});
+			
 		btn_plus.clicked.connect( ()=> {
 			Avance();
 		   ChangeImage(this.count);
@@ -248,6 +269,24 @@ public class Animage : Window {
 			dialogue.destroy();	
 		});	
 	   
+	    btn_info.clicked.connect( () => {
+			string nomfich = NommeImage();
+			string cde= "exiv2 '"+nomfich+"'";
+			string retour="";
+		try {
+			Process.spawn_command_line_sync(cde, out retour); 
+			var msg = new Gtk.MessageDialog(this,Gtk.DialogFlags.MODAL,
+			Gtk.MessageType.INFO, Gtk.ButtonsType.OK, retour);
+			msg.set_title("Infos de l'image ");
+			msg.run();
+			msg.destroy();}
+		catch (SpawnError e) {
+			stdout.printf ("Error: %s\n", e.message);
+			}
+			
+			
+		});
+		
 	    btn_delai.clicked.connect( ()=> {
 			delai=(int)spin.adjustment.value;
 			//print("nouveau délai:%lg",spin.adjustment.value);
