@@ -81,7 +81,7 @@ public class Animage : Window {
 			
 		}
 		  this.count=count; //a pu être modifié
-		  this.layout.tooltip_text="image "+ count.to_string();
+		  this.layout.tooltip_text=_("Image ")+ count.to_string();
 			  
 		} catch (Error e) {
 			stdout.printf("Error %s\n",e.message);
@@ -102,7 +102,7 @@ public class Animage : Window {
 					if (fich.query_exists ()) {
 						var file_info = fich.query_info ("*", FileQueryInfoFlags.NONE);
 						//stdout.printf ("Content type: %s\n", file_info.get_content_type ());
-			
+						
 						if ("image" in file_info.get_content_type ()) { 
 							if (this.listeimg[0]==null) 
 							{this.listeimg[0] = (rep+"/"+name) ;}
@@ -144,11 +144,11 @@ public class Animage : Window {
 		//*******************************************				
  		
         
- 		var ico_info = new Gtk.Image.from_icon_name("info",IconSize.SMALL_TOOLBAR);
- 		var btn_info = new Gtk.ToolButton(ico_info,"Info");
+ 		var ico_info = new Gtk.Image.from_icon_name("dialog_information",IconSize.SMALL_TOOLBAR);
+ 		var btn_info = new Gtk.ToolButton(ico_info,_("Informations"));
  	
  		btn_info.has_tooltip = true;
-		btn_info.tooltip_text = "Info image ";
+		btn_info.tooltip_text = _("Image informations");
  		toolbar.pack_end(btn_info);
  		
  		//*******************************************
@@ -158,22 +158,22 @@ public class Animage : Window {
  		var btn_pin = new Gtk.ToggleButton();
  		btn_pin.image=ico_pin;
  		btn_pin.has_tooltip = true;
-		btn_pin.tooltip_text = "Attaché";
+		btn_pin.tooltip_text = _("Attached");
 		btn_pin.active =true;
 		
  		toolbar.pack_end(btn_pin);
  		
  		/* bouton ouverture de répertoire */
  		var ico_ouvrir = new Gtk.Image.from_icon_name("document-open",IconSize.SMALL_TOOLBAR);
- 		var btn_ouvrir = new Gtk.ToolButton(ico_ouvrir, "Ouvrir");
-		btn_ouvrir.tooltip_text = "Changer de répertoire";
+ 		var btn_ouvrir = new Gtk.ToolButton(ico_ouvrir, _("Open"));
+		btn_ouvrir.tooltip_text = _("Change directory");
  		toolbar.pack_start(btn_ouvrir);
  		
 		//***********************************************
  		//sous menu pour delai
  		//***********************************************
  		var box_delai = new Gtk.Box(Gtk.Orientation.HORIZONTAL,5);
- 		var lbldelai= new Label("Délai en secondes");
+ 		var lbldelai= new Label(_("Delay in sec."));
  		box_delai.add(lbldelai);
  		var spin = new Gtk.SpinButton.with_range(5,60,1);
 		spin.adjustment.value=delai;
@@ -187,17 +187,17 @@ public class Animage : Window {
  		var ico_delai = new Gtk.Image.from_icon_name("appointment",IconSize.SMALL_TOOLBAR);
 		var btn_delai = new Gtk.MenuButton();
 		btn_delai.has_tooltip = true;
-		btn_delai.tooltip_text = "Délai";
+		btn_delai.tooltip_text =  _("Delay");
 		btn_delai.image=ico_delai;
-		/*btn_delai.set_popover(popover_delai);*/
+		btn_delai.set_popover(popover_delai);
  		toolbar.pack_end(btn_delai);
  		
  		//***********************************************
  		//sous menu pour btn_ratio
  		//***********************************************
- 		var item1 = new Gtk.RadioButton.with_label (null,"Garder ratio");
+ 		var item1 = new Gtk.RadioButton.with_label (null,_("Keep ratio"));
  		item1.margin = 5;
-		var item2 = new Gtk.RadioButton.with_label (item1.get_group (),"Remplir");
+		var item2 = new Gtk.RadioButton.with_label (item1.get_group (),_("Enlarge"));
 		item2.margin = 5;
 		item1.set_active(true);
 
@@ -213,14 +213,14 @@ public class Animage : Window {
 		var btn_ratio = new Gtk.MenuButton();
 		btn_ratio.has_tooltip = true;
         btn_ratio.image=ico_ratio;
-		btn_ratio.tooltip_text = "Ratio";
+		btn_ratio.tooltip_text =  _("Ratio");
 		
 		btn_ratio.set_popover(popover);
  		toolbar.pack_end(btn_ratio);
  		
 		//var boxH = new Gtk.Box(Gtk.Orientation.HORIZONTAL,5);
 		var btn_moins= new Gtk.Button.with_label("-");
-		btn_moins.tooltip_text = "Image précédente";
+		btn_moins.tooltip_text = _("Previous");
 		toolbar.pack_start(btn_moins);
 		
 		//fonds écran
@@ -231,7 +231,7 @@ public class Animage : Window {
 		layout.put(this.img,0,0);
 		
 		var btn_plus= new Gtk.Button.with_label("+");
-		btn_plus.tooltip_text = "Image suivante";
+		btn_plus.tooltip_text = _("Next");
 		toolbar.pack_start(btn_plus);
 		
 	    box.pack_start(layout,true,true);
@@ -252,10 +252,10 @@ public class Animage : Window {
 			});
 			
 		btn_ouvrir.clicked.connect( ()=> {
-			var dialogue=new Gtk.FileChooserDialog("Ouvrir...",this,
+			var dialogue=new Gtk.FileChooserDialog(_("Open..."),this,
 			 Gtk.FileChooserAction.SELECT_FOLDER,
-			"_Annuler",Gtk.ResponseType.CANCEL,
-			"_Ouvrir",Gtk.ResponseType.ACCEPT);
+			_("_Cancel"),Gtk.ResponseType.CANCEL,
+			_("_Open"),Gtk.ResponseType.ACCEPT);
 			dialogue.set_filename (paththeme);
 
 			if (dialogue.run()==Gtk.ResponseType.ACCEPT) 
@@ -277,7 +277,7 @@ public class Animage : Window {
 			Process.spawn_command_line_sync(cde, out retour); 
 			var msg = new Gtk.MessageDialog(this,Gtk.DialogFlags.MODAL,
 			Gtk.MessageType.INFO, Gtk.ButtonsType.OK, retour);
-			msg.set_title("Infos de l'image ");
+			msg.set_title(_("Image informations"));
 			msg.run();
 			msg.destroy();}
 		catch (SpawnError e) {
@@ -289,7 +289,7 @@ public class Animage : Window {
 		
 	    btn_delai.clicked.connect( ()=> {
 			delai=(int)spin.adjustment.value;
-			//print("nouveau délai:%lg",spin.adjustment.value);
+			print("nouveau délai:%lg",spin.adjustment.value);
 			
 		});
 		
@@ -304,12 +304,12 @@ public class Animage : Window {
 			pinned =!(pinned);
 			if (pinned==true) {
 				this.set_keep_below(true);
-				btn_pin.tooltip_text="Toujours dessous";
+				btn_pin.tooltip_text=_("Keep below");
 				btn_pin.relief=Gtk.ReliefStyle.NONE;
 			}
 			else
 			{this.set_keep_above(true);
-			btn_pin.tooltip_text="Toujours dessus";
+			btn_pin.tooltip_text=_("Keep above");
 			btn_pin.relief=Gtk.ReliefStyle.NONE;
 			}
 			ChangeImage(count);
