@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lafydev.animage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-29 18:39+0100\n"
-"PO-Revision-Date: 2020-10-29 18:29+0100\n"
+"POT-Creation-Date: 2020-10-30 10:42+0100\n"
+"PO-Revision-Date: 2020-10-30 10:42+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -27,35 +27,35 @@ msgstr ""
 
 #: src/animage.vala:151 src/animage.vala:280
 msgid "Image informations"
-msgstr "Informations de l'image"
+msgstr ""
 
 #: src/animage.vala:161
 msgid "Attached"
-msgstr "Attaché"
+msgstr ""
 
 #: src/animage.vala:168
 msgid "Open"
-msgstr "Ouvrir"
+msgstr ""
 
 #: src/animage.vala:169
 msgid "Change directory"
-msgstr "Changer de répertoire"
+msgstr ""
 
 #: src/animage.vala:176
 msgid "Delay in sec."
-msgstr "Délai en sec."
+msgstr ""
 
 #: src/animage.vala:190
 msgid "Delay"
-msgstr "Délai"
+msgstr ""
 
 #: src/animage.vala:198
 msgid "Keep ratio"
-msgstr "Garder le ratio"
+msgstr ""
 
 #: src/animage.vala:200
 msgid "Enlarge"
-msgstr "Elargir"
+msgstr ""
 
 #: src/animage.vala:216
 msgid "Ratio"
@@ -63,42 +63,43 @@ msgstr ""
 
 #: src/animage.vala:223
 msgid "Previous"
-msgstr "Précédente"
+msgstr ""
 
 #: src/animage.vala:234
 msgid "Next"
-msgstr "Suivante"
+msgstr ""
 
 #: src/animage.vala:255
 msgid "Open..."
-msgstr "Ouvrir"
+msgstr ""
 
 #: src/animage.vala:257
 msgid "_Cancel"
-msgstr "_Annuler"
+msgstr ""
 
 #: src/animage.vala:258
 msgid "_Open"
-msgstr "_Ouvrir"
+msgstr ""
 
 #: src/animage.vala:307
 msgid "Keep below"
-msgstr "Rester au dessous"
+msgstr ""
 
 #: src/animage.vala:312
 msgid "Keep above"
-msgstr "Garder au dessus"
+msgstr ""
 
 #: data/com.github.lafydev.animage.desktop.in:3
 #: data/com.github.lafydev.animage.desktop.in:4
-#: data/com.github.lafydev.animage.appdata.xml.in:6
+#: data/com.github.lafydev.animage.appdata.xml.in:7
 msgid "Animage"
 msgstr ""
 
 #: data/com.github.lafydev.animage.desktop.in:5
-#: data/com.github.lafydev.animage.appdata.xml.in:7
+#: data/com.github.lafydev.animage.appdata.xml.in:8
+#: data/com.github.lafydev.animage.appdata.xml.in:14
 msgid "photo slideshow"
-msgstr "Défilement de photos"
+msgstr ""
 
 #: data/com.github.lafydev.animage.desktop.in:8
 msgid "com.github.lafydev.animage"
@@ -108,6 +109,6 @@ msgstr ""
 msgid "slideshow;Image;"
 msgstr ""
 
-#: data/com.github.lafydev.animage.appdata.xml.in:9
+#: data/com.github.lafydev.animage.appdata.xml.in:10
 msgid "photo slideshow with time and ratio parameters"
-msgstr "Défilement de photos avec paramétrages du délai et ratio"
+msgstr ""

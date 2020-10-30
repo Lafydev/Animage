@@ -81,7 +81,7 @@ public class Animage : Window {
 			
 		}
 		  this.count=count; //a pu être modifié
-		  this.layout.tooltip_text=_("Image ")+ count.to_string();
+		  this.layout.tooltip_text= _("Image ")+ count.to_string();
 			  
 		} catch (Error e) {
 			stdout.printf("Error %s\n",e.message);
@@ -144,7 +144,7 @@ public class Animage : Window {
 		//*******************************************				
  		
         
- 		var ico_info = new Gtk.Image.from_icon_name("dialog_information",IconSize.SMALL_TOOLBAR);
+ 		var ico_info = new Gtk.Image.from_icon_name("dialog-information",IconSize.SMALL_TOOLBAR);
  		var btn_info = new Gtk.ToolButton(ico_info,_("Informations"));
  	
  		btn_info.has_tooltip = true;

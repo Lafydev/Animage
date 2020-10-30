@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2020 Lafydev -->
 <component type="desktop">
 	<id>com.github.lafydev.animage</id>
-	<metadata_licence>CC0</metadata_licence>
+	<metadata_licence>CC0-1.0</metadata_licence>
+	<project_license>GPL-3.0+</project_license>
 	<name>Animage</name>
 	<summary>photo slideshow</summary>
 	<description>
 		<p>photo slideshow with time and ratio parameters</p>
 	</description>
+	<screenshots>
+​    	<screenshot type="default">
+​      		<caption>photo slideshow</caption>
+​     	 	<image>http://github.com/Lafydev/animage/blob/master/screenshot.png</image>
+​    	</screenshot>
+​  </screenshots>
 </component>
