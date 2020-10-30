@@ -1,4 +1,4 @@
-project('com.github.lafydev.animage', 'vala', 'c', version: '0.1.0')
+project('com.github.lafydev.animage', 'vala', 'c')
 
 # Include the translations module
 i18n = import('i18n')
@@ -23,7 +23,7 @@ install_data(
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor','48x48','apps')
     )
        
-#installation du .desktop vers le menu applications
+#translate and install .desktop 
 i18n.merge_file(
 	input:	join_paths('data',meson.project_name()+'.desktop.in'),
 	output: meson.project_name() +'.desktop',
@@ -32,7 +32,7 @@ i18n.merge_file(
 	install: true,
 	install_dir: join_paths(get_option('datadir'),'applications')
 )
-#installation du xml 
+#translate and install appdata.xml 
 i18n.merge_file(
 	input:
 	join_paths('data',meson.project_name()+'.appdata.xml.in'),
@@ -41,6 +41,7 @@ i18n.merge_file(
 	install:true,
 	install_dir: join_paths(get_option('datadir'),'metainfo')
 )
+#meson in po
 subdir('po')
 
 meson.add_install_script('meson/post_install.py')
