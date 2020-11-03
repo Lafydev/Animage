@@ -1,0 +1,16 @@
+Source: com.github.lafydev.animage
+Section: x11
+Priority: extra
+Maintainer: Lafydev <lafy@mailo.com>
+Build-Depends: gettext,
+               debhelper (>= 10.5.1),
+               libgtk-3-dev (>=3.10),
+               meson,
+               valac (>= 0.40.0),
+               exiv2
+Standards-Version: 3.9.3
+Package: com.github.lafydev.animage
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: animage
+ Slideshow with your photos in a directory. Allows time and ratio parameters.
