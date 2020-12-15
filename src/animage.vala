@@ -68,7 +68,8 @@ public class Animage : Window {
 			//preserve ratio
 			Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file_at_scale (fich, (int)x, -1, true); 
 			img.set_from_pixbuf (pixbuf);
-			//img.height_request = (int)y;
+			img.width_request =(int)x;
+			img.height_request = (int)y;
 			//center height
 			layout.move (this.img, 0, ((int)y - pixbuf.height) / 2);
 		} else {
@@ -238,27 +239,23 @@ public class Animage : Window {
 
 	    this.layout = new Layout();
 		this.img = new Gtk.Image();  
-	  	layout.put (this.img, 0, 0);
 		
 	    box.pack_start (layout, expand = true, true, 0);
 	  
 	    layout.size_allocate.connect ((event) => {
 			//change size
-			layout.set_size (event.width, event.height);
-			//this.resized = true ; 
+			layout.set_size (event.width, event.height); 
             ChangeImage (count);
         });
-	    //layout.set_size(WIN_WIDTH-10, WIN_WIDTH - 40);
-		
+	    
 	    // load screen backgrounds for beginning
 		ChargeRep (Environment.get_user_data_dir () + "/backgrounds");
+		//First image
 		ChangeImage (0);
-	    if (this.resized == false) {
-			//first load : problem with size and margin 
-			 this.img.set_size_request(WIN_WIDTH-10, WIN_WIDTH - 40);
-			 this.resized=true;
-		  }
-	    
+		layout.put (this.img, 0, 0);
+		layout.set_size(WIN_WIDTH-10, WIN_WIDTH - 40);
+	    this.img.set_size_request(WIN_WIDTH-10, WIN_WIDTH - 40);
+		
 		//signals
 		btn_moins.clicked.connect ( () => {
 			Recule ();
