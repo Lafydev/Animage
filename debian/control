@@ -9,6 +9,7 @@ Build-Depends: gettext,
                valac (>= 0.40.0),
                exiv2
 Standards-Version: 3.9.3
+
 Package: com.github.lafydev.animage
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}

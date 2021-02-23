@@ -1,3 +1,9 @@
+com.github.lafydev.animage (0.1ubuntu1) UNRELEASED; urgency=medium
+
+  * new release update debian/control 
+
+ -- lafy <lafy@mailo.com>  Tue, 23 Feb 2021 14:06:26 +0100
+
 com.github.lafydev.animage (0.1) bionic; urgency=medium
 
   * Initial Release.
