@@ -2,17 +2,19 @@
 <!-- Copyright 2020 Lafydev -->
 <component type="desktop">
 	<id>com.github.lafydev.animage</id>
-	<metadata_licence>CC0-1.0</metadata_licence>
+	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0+</project_license>
 	<name>Animage</name>
-	<summary>photo slideshow</summary>
+	<summary>A simple photo slideshow</summary>
 	<description>
-		<p>photo slideshow with time and ratio parameters</p>
+		<p>Get a slideshow from your photos and images<br/>
+		If no directory is choosen, simply show your desktop wallpapers</br>
+		You can configure the delay, aspect ratio or modify width and height with the mouse</p>
 	</description>
 	<screenshots>
 ​    	<screenshot type="default">
 ​      		<caption>photo slideshow</caption>
-​     	 	<image>http://github.com/Lafydev/animage/blob/master/screenshot.png</image>
+​     	 	<image>https://github.com/Lafydev/animage/blob/master/screenshot.png</image>
 ​    	</screenshot>
 ​  </screenshots>
 </component>
