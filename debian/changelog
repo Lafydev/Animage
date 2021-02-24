@@ -1,8 +1,9 @@
-com.github.lafydev.animage (0.1ubuntu1) UNRELEASED; urgency=medium
+com.github.lafydev.animage (0.1ubuntu3) UNRELEASED; urgency=medium
 
-  * new release update debian/control 
+  [ lafy ]
+  * new release change xml file 
 
- -- lafy <lafy@mailo.com>  Tue, 23 Feb 2021 14:06:26 +0100
+ -- lafy <lafy@mailo.com>  Wed, 24 Feb 2021 15:19:31 +0100
 
 com.github.lafydev.animage (0.1) bionic; urgency=medium
 

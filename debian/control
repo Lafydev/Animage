@@ -8,7 +8,7 @@ Build-Depends: gettext,
                meson,
                valac (>= 0.40.0),
                exiv2
-Standards-Version: 3.9.3
+Standards-Version: 4.0.0
 
 Package: com.github.lafydev.animage
 Architecture: any
