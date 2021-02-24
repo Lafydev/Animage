@@ -1,9 +1,10 @@
-com.github.lafydev.animage (0.1ubuntu3) UNRELEASED; urgency=medium
+com.github.lafydev.animage (0.1ubuntu4) UNRELEASED; urgency=medium
 
   [ lafy ]
   * new release change xml file 
+  * 
 
- -- lafy <lafy@mailo.com>  Wed, 24 Feb 2021 15:19:31 +0100
+ -- lafy <lafy@mailo.com>  Wed, 24 Feb 2021 16:01:05 +0100
 
 com.github.lafydev.animage (0.1) bionic; urgency=medium
 

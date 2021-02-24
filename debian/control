@@ -14,4 +14,4 @@ Package: com.github.lafydev.animage
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: animage
- Slideshow with your photos in a directory. Allows time and ratio parameters.
+ Create a slideshow with your photos in a directory. Allows time and ratio parameters.

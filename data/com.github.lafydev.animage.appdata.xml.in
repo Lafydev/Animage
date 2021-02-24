@@ -8,7 +8,7 @@
 	<summary>A simple photo slideshow</summary>
 	<description>
 		<p>Get a slideshow from your photos and images<br/>
-		If no directory is choosen, simply show your desktop wallpapers</br>
+		If no directory is choosen, simply show your desktop wallpapers<br/>
 		You can configure the delay, aspect ratio or modify width and height with the mouse</p>
 	</description>
 	<screenshots>
