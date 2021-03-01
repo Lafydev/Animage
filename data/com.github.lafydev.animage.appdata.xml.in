@@ -7,9 +7,10 @@
 	<name>Animage</name>
 	<summary>A simple photo slideshow</summary>
 	<description>
-		<p>Get a slideshow from your photos and images<br/>
-		If no directory is choosen, simply show your desktop wallpapers<br/>
-		You can configure the delay, aspect ratio or modify width and height with the mouse</p>
+		<p>Get a slideshow from your photos and images</p>
+		<p>Use your desktop wallpapers or a directory from your choice</p>
+		<p>You can configure delay and aspect ratio</p>
+		<p>Modify the window width and height with the mouse and pin it on your desktop</p>
 	</description>
 	<screenshots>
 ​    	<screenshot type="default">
