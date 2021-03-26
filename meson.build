@@ -9,7 +9,7 @@ dependencies = [
     dependency('glib-2.0'),
     dependency('gobject-2.0'),
     dependency('gtk+-3.0'),
-	dependency('gio-2.0'),
+    dependency('gio-2.0'),
 ]
 
 sources = files('src/animage.vala')
@@ -18,10 +18,13 @@ sources = files('src/animage.vala')
 executable(meson.project_name(), sources, dependencies: dependencies, install: true)
 
 #install icon png
+icon_sizes = ['32', '48', '64', '128']
+foreach i : icon_sizes
 install_data(
-        join_paths('data/icons', meson.project_name() +'.png'),
-        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor','48x48','apps')
+        join_paths('data/icons', i, meson.project_name() + '.png'),
+        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'apps')
     )
+endforeach  
        
 #translate and install .desktop 
 i18n.merge_file(
