@@ -1,10 +1,9 @@
-com.github.lafydev.animage (0.1ubuntu5) UNRELEASED; urgency=medium
+com.github.lafydev.animage (0.1ubuntu6) UNRELEASED; urgency=medium
 
   [ lafy ]
-  * new release change xml description 
-  *  
+  * new release : add different icon sizes
 
- -- lafy <lafy@mailo.com>  Mon, 01 Mar 2021 13:33:13 +0100
+ -- lau <lafy@mailo.com>  Fri, 26 Mar 2021 12:08:17 +0100
 
 com.github.lafydev.animage (0.1) bionic; urgency=medium
 
