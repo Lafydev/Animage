@@ -12,10 +12,14 @@
 		<p>You can configure delay and aspect ratio</p>
 		<p>Modify the window width and height with the mouse and pin it on your desktop</p>
 	</description>
+	<developer_name>Lafy</developer_name>
+	<url type="homepage">https://github.com/Lafydev/Animage/</url>
+	<url type="bugtracker">https://github.com/Lafydev/Animage/issues</url>
 	<screenshots>
 ​    	<screenshot type="default">
 ​      		<caption>photo slideshow</caption>
-​     	 	<image>https://github.com/Lafydev/animage/blob/master/screenshot.png</image>
+​     	 	<image>https://github.com/Lafydev/Animage/blob/master/screenshot.png</image>
 ​    	</screenshot>
 ​  </screenshots>
+  <content_rating type="oars-1.1"/>
 </component>
