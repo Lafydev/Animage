@@ -10,6 +10,8 @@ You can create a slideshow with your desktop theme or your personal photos<br/>
 
 <p align="center"><img src="screenshot.png"/> </p>
 
+<a href="https://appcenter.elementary.io/com.github.Lafydev.Animage"><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter"></a>
+
 <h1>Build and install</h1>
 
 Download the last release (zip) et extract files<br/>
