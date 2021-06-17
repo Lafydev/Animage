@@ -2,11 +2,10 @@
 <h1>Description:</h1>
 Let your photos inspire your daily work. <br/>
 You can create a slideshow with your desktop theme or your personal photos<br/>
-<ul>
-<li>Modify your timer</li>
-<li>upload a new directory</li>
-<li>Pin the widget to the desktop or keep it above all other windows</li> 
-</ul>
+
+- Modify your timer
+- upload a new directory
+- Pin the widget to the desktop or keep it above all other windows
 
 <p align="center"><img src="screenshot.png"/> </p>
 
