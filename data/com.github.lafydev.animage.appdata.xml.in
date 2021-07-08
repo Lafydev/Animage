@@ -7,11 +7,12 @@
 	<name>Animage</name>
 	<summary>A simple photo slideshow</summary>
 	<description>
+		<p>Features:</p>
 		<ul>
-		<li>Get a slideshow from your photos and images</li>
-		<li>Use your desktop wallpapers or a directory from your choice</li>
-		<li>You can configure delay and aspect ratio</li>
-		<li>Modify the window width and height with the mouse and pin it on your desktop</li>
+			<li>Get a slideshow from your photos and images</li>
+			<li>Use your desktop wallpapers or a directory from your choice</li>
+			<li>You can configure delay and aspect ratio</li>
+			<li>Modify the window width and height with the mouse and pin it on your desktop</li>
 		</ul>
 	</description>
 	<developer_name>Lafy</developer_name>
