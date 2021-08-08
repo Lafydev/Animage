@@ -19,10 +19,17 @@
 	<url type="homepage">https://github.com/Lafydev/Animage/</url>
 	<url type="bugtracker">https://github.com/Lafydev/Animage/issues</url>
 	<screenshots>
-​    	<screenshot type="default">
-​      		<caption>photo slideshow</caption>
-​     	 	<image>https://raw.githubusercontent.com/Lafydev/Animage/master/screenshot.png</image>
-​    	</screenshot>
-​  </screenshots>
-  <content_rating type="oars-1.1"/>
+​		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/lafydev/animage/master/screenshot.png</image>
+​		</screenshot>
+​	</screenshots>
+	<releases>
+		<release version="1.0.9" date="2021-08-04">
+			<description>
+				<p>Give a try to flatpak</p>
+				<ul><li>Fix xml</li></ul>
+			</description>
+		</release>
+	</releases>
+	<content_rating type="oars-1.1"/>
 </component>
