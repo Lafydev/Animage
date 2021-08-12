@@ -1,4 +1,5 @@
 # Animage
+
 <h1>Description:</h1>
 Let your photos inspire your daily work. <br/>
 You can create a slideshow with your desktop theme or your personal photos<br/>
@@ -8,6 +9,8 @@ You can create a slideshow with your desktop theme or your personal photos<br/>
 - Pin the widget to the desktop or keep it above all other windows
 
 <p align="center"><img src="screenshot.png"/> </p>
+
+Photo (Yoga) by Jeremy Bishop on Unsplash... 
 
 <a href="https://appcenter.elementary.io/com.github.lafydev.animage"><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter"></a>
 
