@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2020 Lafydev -->
 <component type="desktop">
-	<id>com.github.lafydev.animage</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0+</project_license>
-	<name>Animage</name>
-	<summary>A simple photo slideshow</summary>
-	<description>
-		<p>Features:</p>
-		<ul>
-			<li>Get a slideshow from your photos and images</li>
-			<li>Use your desktop wallpapers or a directory from your choice</li>
-			<li>You can configure delay and aspect ratio</li>
-			<li>Modify the window width and height with the mouse and pin it on your desktop</li>
-		</ul>
-	</description>
-	<developer_name>Lafy</developer_name>
-	<url type="homepage">https://github.com/Lafydev/Animage/</url>
-	<url type="bugtracker">https://github.com/Lafydev/Animage/issues</url>
-	<screenshots>
-​		<screenshot type="default">
-			<image>https://raw.githubusercontent.com/lafydev/animage/master/screenshot.png</image>
-​		</screenshot>
-​	</screenshots>
-	<releases>
-		<release version="1.0.9" date="2021-08-04">
-			<description>
-				<p>Give a try to flatpak</p>
-				<ul><li>Fix xml</li></ul>
-			</description>
-		</release>
-	</releases>
-	<content_rating type="oars-1.1"/>
+    <id>com.github.lafydev.animage</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Animage</name>
+    <summary>A simple photo slideshow</summary>
+    <description>
+        <p>Get a slideshow from your photos and images using your desktop wallpapers or a directory from your choice (personnal photos).
+        
+        <ul>
+            <li>Configure delay and aspect ratio</li>
+            <li>Modify the window width and height with the mouse and pin it on your desktop</li>
+        </ul>
+        </p>
+    </description>
+    <developer_name>Lafy</developer_name>
+    <update_contact>lafy_AT_mailo.com</update_contact>
+    <url type="homepage">https://github.com/Lafydev/Animage/</url>
+    <url type="bugtracker">https://github.com/Lafydev/Animage/issues</url>
+    <screenshots>
+​       <screenshot type="default">
+        <image>https://raw.githubusercontent.com/lafydev/animage/master/screenshot.png</image>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="1.0.9" date="2021-08-04">
+            <description>
+                <p>Give a try to flatpak !</p>
+                <ul>
+                <li>Fix appdata.xml for flatpak</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+    <translation></translation>
+    <content_rating type="oars-1.1"/>
 </component>
