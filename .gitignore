@@ -1,4 +1,8 @@
 build/
 .*
-#IDE
+
+# IDE
 *~
+
+# Work
+*.bak

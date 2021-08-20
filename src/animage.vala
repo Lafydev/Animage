@@ -27,7 +27,7 @@ public class Animage : Window {
   private int delai = 10;
   private bool ratio = true;
   private bool pinned = false;
-  private bool resized = false;
+  //private bool resized = false;
   const int WIN_WIDTH = 350;
  
     void Avance () {
@@ -107,23 +107,20 @@ public class Animage : Window {
 				if (fich.query_exists ()) {
 					var file_info = fich.query_info ("*", FileQueryInfoFlags.NONE);
 					//stdout.printf ("Content type: %s\n", file_info.get_content_type ());
-					
 					if ("image" in file_info.get_content_type ()) { 
 						if (this.listeimg[0] == null) 
 						{this.listeimg[0] = (rep + "/" + name);}
 						else {
 							this.listeimg += (rep + "/" + name);
-						}	
+						}
 					}
 				}
-				
 			}
 		} catch (Error e) {
 			stdout.printf("Erreur %s", e.message );
 		}
-				
 	}
-		
+
 	public Animage() {
 	    this.listeimg = {};
 		this.title = "Animages";
@@ -131,7 +128,7 @@ public class Animage : Window {
 		this.set_position (Gtk.WindowPosition.CENTER);
 		
 		this.set_default_size (WIN_WIDTH,WIN_WIDTH - 50);
-		this.move (0, 200); //left
+		this.move (20, 200); //left
 		
 		//this.set_decorated (false);//no border
 		this.set_resizable (true); //redim
@@ -139,25 +136,24 @@ public class Animage : Window {
 		this.border_width = 5; //inner margin
 
 	    var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-	    
-	  
+
 		
 		var toolbar = new Gtk.ActionBar ();
 		toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 	    box.pack_end (toolbar, expand = false, false, 0);
-	  
+	
 	    //*******************************************
  		// i = submenu  button with META infos
- 		//*******************************************				
- 		
-        
+ 		//*******************************************
+
+
  		var ico_info = new Gtk.Image.from_icon_name ("dialog-information", IconSize.SMALL_TOOLBAR);
  		var btn_info = new Gtk.ToolButton (ico_info, _("Informations"));
- 	
+
  		btn_info.has_tooltip = true;
 		btn_info.tooltip_text = _("Image informations");
  		toolbar.pack_end (btn_info);
- 		
+
  		//*******************************************
  		// pinned = always below + no border
  		//*******************************************
