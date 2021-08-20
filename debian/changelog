@@ -1,10 +1,9 @@
-com.github.lafydev.animage (0.1ubuntu2) UNRELEASED; urgency=medium
+com.github.lafydev.animage (0.1ubuntu3) UNRELEASED; urgency=medium
 
   [ lafy ]
-  * new release : update screenshot - try flatpak 
-  
+  * new release : update configuration files for flatpak 
 
- -- lau <lafy@mailo.com>  Thu, 12 Aug 2021 18:00:36 +0200
+ -- lafy <lafy@mailo.com>  Fri, 20 Aug 2021 10:48:56 +0200
 
 com.github.lafydev.animage (0.1) bionic; urgency=medium
 

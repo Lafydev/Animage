@@ -25,11 +25,11 @@
         </screenshot>
     </screenshots>
     <releases>
-        <release version="1.0.10" date="2021-08-12">
+        <release version="1.0.11" date="2021-08-20">
             <description>
                 <p>Give a try to flatpak !</p>
                 <ul>
-                <li>Fix appdata.xml for flatpak</li>
+                <li>Fix configuration files for flatpak</li>
                 </ul>
             </description>
         </release>
